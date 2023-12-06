@@ -2,15 +2,29 @@ import React, { useState, useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
 
-// Placeholder data for questions (replace with your actual data)
+// Placeholder data for questions
 const questionsData = [
     {
-      id: 1,
-      image: 'path/to/image1.jpg',
-      question: 'What is the capital of France?',
-      options: ['Option A', 'Option B', 'Option C', 'Option D'],
-      correctAnswer: 'Option A', // Replace with the correct answer
+        id: 1,
+        image: 'path/to/image1.jpg',
+        question: 'What is the capital of France?',
+        options: ['Option A', 'Option B', 'Option C', 'Option D'],
+        correctAnswer: 'Option A', // Replace with the correct answer
     },
+    {
+        id: 2,
+        image: 'path/to/image1.jpg',
+        question: 'What is the capital of France?',
+        options: ['Option A', 'Option B', 'Option C', 'Option D'],
+        correctAnswer: 'Option A', // Replace with the correct answer
+      },
+      {
+        id: 3,
+        image: 'path/to/image1.jpg',
+        question: 'What is the capital of France?',
+        options: ['Option A', 'Option B', 'Option C', 'Option D'],
+        correctAnswer: 'Option A', // Replace with the correct answer
+      },
 
 ];
 
@@ -26,19 +40,49 @@ const Question = () => {
     const [responseTimes, updateResponseTimes] = useState([]);
     const [responseCorrectness, updateResponseCorrectness] = useState([]);
 
-    //update to [questionsID] once i have 20 questions.
     const currentQuestion = questionsData[questionID];
 
+
+    //tracking the timer
+    const [timer, setTimer] = useState(0);
+
+    //start the timer 
+    useEffect(() => {
+        const timerId = setInterval(() => {
+        setTimer(prevTimer => prevTimer + 1);
+        }, 1); // Update every millisecond
+
+        // Cleanup function to clear the interval when the component unmounts or when the question changes
+        return () => clearInterval(timerId);
+    }, [questionID]);
+
+
     //handle question number increase
-    const handleSubmit = () => {
+    const handleSubmit = (correct) => {
+
+        // Stop the timer when the user clicks "Next"
+        clearInterval(timer);
+
+        // Log the response time for the current question
+        updateResponseTimes([...responseTimes, timer])
+
+        //reset timer
+        setTimer(0);
+
 
         updateQuestionID(questionID + 1);
 
         //insert thing to handle response times here
+        updateResponseCorrectness([...responseCorrectness, Number(correct)]); 
 
-        updateSelectedAnswer(null);
     }
-
+    
+    //debug print this out properly 
+    useEffect(() => {
+        console.log('correctness = ', responseCorrectness);
+        console.log('times = ', responseTimes);
+      }, [responseCorrectness]);
+    
 
     //handle when option is selected
     const handleOptionSelect = (selectedOption) => {
@@ -69,7 +113,9 @@ const Question = () => {
                     </div>
             ))}
             </div>
-            <button onClick={handleSubmit} disabled={!selectedAnswer}>
+            <button onClick={() => {
+                handleSubmit(selectedAnswer == currentQuestion.correctAnswer);
+            }} disabled={!selectedAnswer}>
             Next
             </button>
         </div>
@@ -88,8 +134,6 @@ const Question = () => {
         )
 
     }
-
-
 
 }
 
