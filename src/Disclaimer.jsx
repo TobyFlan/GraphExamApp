@@ -25,7 +25,9 @@ const Disclaimer = () => {
 
             <p>press the button below to agree to the recording of your responses, and to
                 view your first question</p>
+            <RouterLink to="/question">
             <button onClick={() => console.log("clidked dis shi")}>I Agree, Start Exam</button>
+            </RouterLink>
             <RouterLink to="/">
                 <button onClick={() => console.log("DISAGREED")}>I Disagree, Don't talk to me!</button>
             </RouterLink>
