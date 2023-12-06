@@ -75,6 +75,8 @@ const Question = () => {
         //insert thing to handle response times here
         updateResponseCorrectness([...responseCorrectness, Number(correct)]); 
 
+        updateSelectedAnswer(null);
+
     }
     
     //debug print this out properly 
