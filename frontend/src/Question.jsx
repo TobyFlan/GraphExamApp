@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+import saveSurveyData from './services/saveData';
 
 
 // Placeholder data for questions
@@ -131,7 +132,9 @@ const Question = () => {
         return(
             <div>
                 <h1>TEST IS OVER</h1>
-                <button onClick={() => {console.log("finished test!")}}>Exit</button>
+                <button onClick={() => {
+                    saveSurveyData(1, responseCorrectness, responseTimes);
+                    console.log("finished test!");}}>Send data and exit</button>
             </div>
         )
 
