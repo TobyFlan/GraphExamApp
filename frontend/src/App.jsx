@@ -20,7 +20,7 @@ const App = () => {
 
         <h3>Press the button to continue.</h3>
 
-        <GoButton to="/disclaimer" text={"yIPPEE!"}></GoButton>
+        <GoButton to="/disclaimer" text={"Disclaimer"}></GoButton>
       </div>
     </>
   );

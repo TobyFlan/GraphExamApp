@@ -7,25 +7,144 @@ import saveSurveyData from './services/saveData';
 const questionsData = [
     {
         id: 1,
-        image: 'path/to/image1.jpg',
-        question: 'What is the capital of France?',
-        options: ['Option A', 'Option B', 'Option C', 'Option D'],
-        correctAnswer: 'Option A', // Replace with the correct answer
+        image: `src/assets/Question_1.png`,
+        question: 'Which country got the highest number of medals in 2003?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'Japan',
     },
     {
         id: 2,
-        image: 'path/to/image1.jpg',
-        question: 'What is the capital of France?',
-        options: ['Option A', 'Option B', 'Option C', 'Option D'],
-        correctAnswer: 'Option A', // Replace with the correct answer
+        image: `src/assets/Question_2.png`,
+        question: 'Which country got the highest number of medals in 2003?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'Japan', 
       },
       {
         id: 3,
-        image: 'path/to/image1.jpg',
-        question: 'What is the capital of France?',
-        options: ['Option A', 'Option B', 'Option C', 'Option D'],
-        correctAnswer: 'Option A', // Replace with the correct answer
+        image: `src/assets/Question_3.png`,
+        question: 'Which country has the second highest total medal count in 2002?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'USA',
       },
+      {
+        id: 4,
+        image: `src/assets/Question_4.png`,
+        question: 'Which country has the highest total medal count in 2002?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'Russia',
+      },
+      {
+        id: 5,
+        image: `src/assets/Question_5.png`,
+        question: 'Which country scored exactly 15 medals in 2001?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'GB',
+      },
+      {
+        id: 6,
+        image: `src/assets/Question_6.png`,
+        question: 'Which country scored the most medals in 2004?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'USA', 
+      },
+      {
+        id: 7,
+        image: `src/assets/Question_7.png`,
+        question: 'Which country has the second lowest medal count in 2001?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'Russia',
+      },
+      {
+        id: 8,
+        image: `src/assets/Question_8.png`,
+        question: 'Which country has the second lowest medal count in 2001?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'Japan',
+      },
+      {
+        id: 9,
+        image: `src/assets/Question_9.png`,
+        question: 'Which country scored the highest total medal count accross all years?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'Russia',
+      },
+      {
+        id: 10,
+        image: `src/assets/Question_10.png`,
+        question: 'Which country scored the highest total medal count accross all years?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'GB',
+      },
+      {
+        id: 11,
+        image: `src/assets/Question_11.png`,
+        question: 'Which country scored the lowest total medal count accross all years?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'China',
+      },
+      {
+        id: 12,
+        image: `src/assets/Question_12.png`,
+        question: 'Which country scored the lowest total medal count accross all years?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'China', 
+      },
+      {
+        id: 13,
+        image: `src/assets/Question_13.png`,
+        question: 'Which country scored the lowest total medal count accross all years?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'GB',
+      },
+      {
+        id: 14,
+        image: `src/assets/Question_14.png`,
+        question: 'Which country scored the lowest total medal count accross all years?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'Japan',
+      },
+      {
+        id: 15,
+        image: `src/assets/Question_15.png`,
+        question: 'Which country scored the highest total medal count accross all years?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'China',
+      },
+      {
+        id: 16,
+        image: `src/assets/Question_16.png`,
+        question: 'Which country scored the highest total medal count accross all years?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'USA',
+      },
+      {
+        id: 17,
+        image: `src/assets/Question_17.png`,
+        question: 'Who scored the second highest number of medals in 2002?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'Russia',
+      },
+      {
+        id: 18,
+        image: `src/assets/Question_18.png`,
+        question: 'Who scored the second highest number of medals in 2002?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'Japan',
+      },
+      {
+        id: 19,
+        image: `src/assets/Question_19.png`,
+        question: 'Who scored the second highest number of medals in 2002?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'USA',
+      },
+      {
+        id: 20,
+        image: `src/assets/Question_20.png`,
+        question: 'Who scored the second highest number of medals in 2002?',
+        options: ['USA', 'Japan', 'Russia', 'GB', 'China'],
+        correctAnswer: 'USA',
+      }
 
 ];
 
@@ -99,7 +218,7 @@ const Question = () => {
         return(
             <div>
                 <h1>QUESTION {questionID + 1}</h1>
-                <img src={currentQuestion.image} alt={`Question ${currentQuestion.id}`}></img>
+                <img className="responsive-image" src={currentQuestion.image} alt={`Question ${currentQuestion.id}`}></img>
                 <p>{currentQuestion.question}</p>
                 <div className="question-options">
                 {currentQuestion.options.map((option, index) => (
@@ -132,9 +251,18 @@ const Question = () => {
         return(
             <div>
                 <h1>TEST IS OVER</h1>
-                <button onClick={() => {
-                    saveSurveyData(1, responseCorrectness, responseTimes);
-                    console.log("finished test!");}}>Send data and exit</button>
+                <RouterLink
+                    to={'/results'}
+                    state={[responseTimes, responseCorrectness]}
+                    >
+                    <button onClick={() => {
+                        saveSurveyData(1, responseCorrectness, responseTimes);
+                        console.log("finished test!");
+                    }}>
+                        Send data and view results
+                    </button>
+                </RouterLink>
+
             </div>
         )
 
